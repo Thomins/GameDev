@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraRotate : MonoBehaviour {
 
     public float RoatationSpeed = 0.1f;
-    bool right = false;
 
     // Use this for initialization
     void Start () {

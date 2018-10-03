@@ -31,17 +31,17 @@ public class Detection : MonoBehaviour {
         Vector3 pointOnScreen = cam.WorldToScreenPoint (toCheck.GetComponentInChildren<Renderer> ().bounds.center);
         // Debug.DrawLine (cam.transform.position, toCheck.GetComponentInChildren<Renderer> ().bounds.center, Color.red);
         //Is in front
-        //if (pointOnScreen.z < 0) {
-        //    //Debug.Log("Behind: " + toCheck.name);
-        //    return false;
-        //}
+        if (pointOnScreen.z < 0) {
+            //Debug.Log("Behind: " + toCheck.name);
+            return false;
+        }
 
         //Is in FOV
-        //if ((pointOnScreen.x < 0) || (pointOnScreen.x > Screen.width) ||
-        //    (pointOnScreen.y < 0) || (pointOnScreen.y > Screen.height)) {
-        //    //Debug.Log("OutOfBounds: " + toCheck.name);
-        //    return false;
-        //}
+        if ((pointOnScreen.x < 0) || (pointOnScreen.x > Screen.width) ||
+            (pointOnScreen.y < 0) || (pointOnScreen.y > Screen.height)) {
+            //Debug.Log("OutOfBounds: " + toCheck.name);
+            return false;
+        }
 
         RaycastHit hit;
         Vector3 heading = toCheck.transform.position - origin.transform.position;
