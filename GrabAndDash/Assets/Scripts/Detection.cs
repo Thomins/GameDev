@@ -18,7 +18,7 @@ public class Detection : MonoBehaviour {
     void Update () {
         if (IsInView (this.gameObject, player)) 
         {
-            Debug.DrawLine(cam.transform.position, player.GetComponentInChildren<Renderer> ().bounds.center, Color.red);
+            Debug.DrawLine(cam.transform.position, player.GetComponentInChildren<Renderer>().bounds.center, Color.red);
             //Debug.Log ("In view of " + cam.name);
             uiTextAlert.text = "Intruder Detected";
         } else {
