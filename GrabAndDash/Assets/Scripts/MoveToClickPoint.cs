@@ -57,7 +57,7 @@ public class MoveToClickPoint : MonoBehaviour
 
     void PositionObjectCreate(GameObject toPlace, RaycastHit clickPosition)
     {
-        toPlace.transform.position = new Vector3(clickPosition.point.x, 1.283f, clickPosition.point.z);
+        toPlace.transform.position = new Vector3(clickPosition.point.x, 0f, clickPosition.point.z);
         Instantiate(toPlace, toPlace.transform.position, toPlace.transform.rotation);
     }
 }
