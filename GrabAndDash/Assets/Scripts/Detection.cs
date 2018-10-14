@@ -8,10 +8,11 @@ public class Detection : MonoBehaviour {
     public GameObject player;
     public Camera cam;
     public Text uiTextAlert;
+    public bool isDetected;
 
     // Use this for initialization
     void Start () {
-
+        isDetected = false;
     }
 
     // Update is called once per frame
@@ -21,8 +22,10 @@ public class Detection : MonoBehaviour {
             Debug.DrawLine(cam.transform.position, player.GetComponentInChildren<Renderer>().bounds.center, Color.red);
             //Debug.Log ("In view of " + cam.name);
             uiTextAlert.text = "Intruder Detected";
+            isDetected = true;
         } else {
             uiTextAlert.text = "";
+            isDetected = false;
         }
 
     }

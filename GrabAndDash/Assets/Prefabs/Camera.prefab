@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114093175786110826}
   - component: {fileID: 114920129166264382}
   m_Layer: 5
-  m_Name: MovingCamera-1 1
+  m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -247,7 +247,7 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.5
+    x: 0
     y: 0
     width: 0.5
     height: 0.5
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2942d24a363896f4da89c314f0e06bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoatationSpeed: 0.08
+  RoatationSpeed: 0
 --- !u!114 &114143383103069200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -550,6 +550,7 @@ MonoBehaviour:
   player: {fileID: 0}
   cam: {fileID: 20217915242039696}
   uiTextAlert: {fileID: 114162899930325166}
+  isDetected: 0
 --- !u!114 &114950098814903520
 MonoBehaviour:
   m_ObjectHideFlags: 1
