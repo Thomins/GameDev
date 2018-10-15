@@ -4,52 +4,42 @@ using UnityEngine.AI;
 
 public class MoveToClickPoint : MonoBehaviour
 {
-    public Camera grid2x1_CENTER;
-    public Camera grid1x1_LEFT;
-    public Camera grid1x1_RIGHT;
-
     public GameObject arrow;
 
     NavMeshAgent agent;
 
+    GameObject[] cameras;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        cameras = GameObject.FindGameObjectsWithTag("Camera");
     }
 
     void Update()
     {   
         if (Input.GetButtonDown("Fire1"))
         {
-            Vector3 POSITION_CENTER_CAMERA = grid2x1_CENTER.ScreenToViewportPoint(Input.mousePosition);
-            Vector3 POSITION_LEFT_CAMERA = grid1x1_LEFT.ScreenToViewportPoint(Input.mousePosition);
-            Vector3 POSITION_RIGHT_CAMERA = grid1x1_RIGHT.ScreenToViewportPoint(Input.mousePosition);
-            Debug.Log(POSITION_CENTER_CAMERA + "" + POSITION_LEFT_CAMERA + "" + POSITION_RIGHT_CAMERA);
-
             RaycastHit hit;
-
-            if ((POSITION_CENTER_CAMERA.x >= 0.0 && POSITION_CENTER_CAMERA.y >= 0.0) && (POSITION_CENTER_CAMERA.x <= 1.0 && POSITION_CENTER_CAMERA.y <= 1.0))
+            foreach (GameObject cam in cameras)
             {
-                if (Physics.Raycast(grid2x1_CENTER.ScreenPointToRay(Input.mousePosition), out hit, 100))
+                if(cam.GetComponent<Toggle>().cameraSwitch == true)
                 {
-                    agent.destination = hit.point;
-                    PositionObjectCreate(arrow, hit);
-                }
-            }
-            else if ((POSITION_LEFT_CAMERA.x >= 0.0 && POSITION_LEFT_CAMERA.y >= 0.0) && (POSITION_LEFT_CAMERA.x <= 1.0 && POSITION_LEFT_CAMERA.y <= 1.0))
-            {
-                if (Physics.Raycast(grid1x1_LEFT.ScreenPointToRay(Input.mousePosition), out hit, 100))
-                {
-                    agent.destination = hit.point;
-                    PositionObjectCreate(arrow, hit);
-                }
-            }
-            else if ((POSITION_RIGHT_CAMERA.x >= 0.0 && POSITION_RIGHT_CAMERA.y >= 0.0) && (POSITION_RIGHT_CAMERA.x <= 1.0 && POSITION_RIGHT_CAMERA.y <= 1.0))
-            {
-                if (Physics.Raycast(grid1x1_RIGHT.ScreenPointToRay(Input.mousePosition), out hit, 100))
-                {
-                    agent.destination = hit.point;
-                    PositionObjectCreate(arrow, hit);
+                    Vector3 POSITION_CENTER_CAMERA = cam.GetComponent<Camera>().ScreenToViewportPoint(Input.mousePosition);
+                    if ((POSITION_CENTER_CAMERA.x >= 0.0 && POSITION_CENTER_CAMERA.y >= 0.0) && (POSITION_CENTER_CAMERA.x <= 1.0 && POSITION_CENTER_CAMERA.y <= 1.0))
+                    {
+                        if (Physics.Raycast(cam.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition), out hit, 100))
+                        {
+                            Debug.Log(hit.point);
+                            Debug.Log(agent.transform.position);
+                            Debug.Log(Mathf.Abs(hit.point.x - agent.transform.position.x));
+                            if ((Mathf.Abs(hit.point.x - agent.transform.position.x)) <= 5 && Mathf.Abs((hit.point.z - agent.transform.position.z)) <= 5)
+                            {
+                                agent.destination = hit.point;
+                                PositionObjectCreate(arrow, hit);
+                            }
+                        }
+                    }
                 }
             }
         }

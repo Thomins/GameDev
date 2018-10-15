@@ -6,15 +6,18 @@ public class CameraRotate : MonoBehaviour {
 
     public float RoatationSpeed = 0.1f;
 
+    float startAngle;
+
     // Use this for initialization
     void Start () {
-		
+        startAngle = transform.rotation.eulerAngles.y;
 	}
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.rotation.eulerAngles.y <= 120 || transform.rotation.eulerAngles.y >= 160)
+        float currentAngle = transform.rotation.eulerAngles.y;
+        if ((currentAngle - startAngle) <= -20 || (currentAngle - startAngle) >= 20)
         {
             RoatationSpeed *= -1;
         }

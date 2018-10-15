@@ -68,6 +68,8 @@
     <Compile Include="Assets\Scripts\MoveToClickPoint.cs" />
     <Compile Include="Assets\Scripts\RendererExtensions.cs" />
     <Compile Include="Assets\Scripts\Rotation.cs" />
+    <Compile Include="Assets\ShutOffCamera.cs" />
+    <Compile Include="Assets\Toggle.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/Steel/Documents/GameDev/GrabAndDash/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4589776246544058}
   - component: {fileID: 114271768506438312}
+  - component: {fileID: 65831071748401214}
+  - component: {fileID: 114751979750711408}
   m_Layer: 0
   m_Name: doughnut
   m_TagString: Untagged
@@ -186,6 +188,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1548418260395406}
   m_Mesh: {fileID: 4300002, guid: 4955f33bc5269384f96af45a7627682a, type: 3}
+--- !u!65 &65831071748401214
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1128322802780452}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114271768506438312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -198,3 +212,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RoatationSpeed: 0.1
+--- !u!114 &114751979750711408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1128322802780452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b08ff801e40394e883cf35aaa6dcb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1886905498916824, guid: 3ae80ea7f29827b458a04146cfa3f1a1, type: 2}
+  distance: 0.2

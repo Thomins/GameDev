@@ -40,9 +40,11 @@ GameObject:
   - component: {fileID: 81210247754413030}
   - component: {fileID: 114093175786110826}
   - component: {fileID: 114920129166264382}
+  - component: {fileID: 114357814908494848}
+  - component: {fileID: 114382683953456264}
   m_Layer: 5
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: Camera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,8 +251,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.5
-    height: 0.5
+    width: 0
+    height: 0
   near clip plane: 0.03
   far clip plane: 40
   field of view: 28.707916
@@ -404,6 +406,31 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114357814908494848
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1144959973666732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60016f5a15a0b9442b2ee8c5e125f659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CountDownTime: 10
+  IsMonitoring: 0
+--- !u!114 &114382683953456264
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1144959973666732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88155edddfa85e94eb5b3577e5bb4624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraSwitch: 0
 --- !u!114 &114400531976835516
 MonoBehaviour:
   m_ObjectHideFlags: 1
