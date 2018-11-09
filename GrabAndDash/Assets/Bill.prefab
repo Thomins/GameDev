@@ -1194,13 +1194,11 @@ GameObject:
   - component: {fileID: 95487361337367778}
   - component: {fileID: 54321098528744014}
   - component: {fileID: 136203534110917122}
-  - component: {fileID: 114985953089980272}
-  - component: {fileID: 114698234349908190}
   - component: {fileID: 114698939840328224}
   - component: {fileID: 195152421411106760}
   m_Layer: 0
   m_Name: Bill
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2267,7 +2265,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1886905498916824}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8065531, y: 1.32, z: -1.27}
+  m_LocalPosition: {x: 13.05, y: -4.8026073e-17, z: 13.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4211779229688164}
@@ -2488,25 +2486,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114698234349908190
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1886905498916824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce7a80d520cacc042b5fe14f373d8173, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MovingTurnSpeed: 360
-  m_StationaryTurnSpeed: 180
-  m_JumpPower: 6
-  m_GravityMultiplier: 2
-  m_RunCycleLegOffset: 0.2
-  m_MoveSpeedMultiplier: 1
-  m_AnimSpeedMultiplier: 1
-  m_GroundCheckDistance: 0.3
 --- !u!114 &114698939840328224
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2522,17 +2501,6 @@ MonoBehaviour:
   grid1x1_LEFT: {fileID: 0}
   grid1x1_RIGHT: {fileID: 0}
   arrow: {fileID: 100006, guid: 02f93d1fc157d1f4ea8c8aff0c5eeff9, type: 3}
---- !u!114 &114985953089980272
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1886905498916824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 521b611700410be45810047f0a74e899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &136203534110917122
 CapsuleCollider:
   m_ObjectHideFlags: 1
